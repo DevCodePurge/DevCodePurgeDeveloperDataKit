@@ -9,6 +9,7 @@ import SwiftUI
 import DevCodePurgeKit
 
 struct DeviceSupportView: View {
+    @State private var showingConfirmation = false
     @StateObject var viewModel: DeviceSupportViewModel
     
     var body: some View {
@@ -24,7 +25,9 @@ struct DeviceSupportView: View {
                             DeviceSupportRow(folder: folder)
                         }
                     } else {
-                        Button("Determine Used Device Support", action: viewModel.determineUsedDeviceSupport)
+                        Button("Determine Used Device Support") {
+                            showingConfirmation = true
+                        }
                     }
                 }
                 
@@ -41,6 +44,11 @@ struct DeviceSupportView: View {
         }
         .withSelectionDetailFooter(selectionCount: viewModel.selectedCount, selectionSize: viewModel.selectedSize)
         .showingLoadingDevicesProgressBar(progress: $viewModel.progressInfo)
+        .confirmationDialog("", isPresented: $showingConfirmation) {
+            Button("Okay", action: viewModel.determineUsedDeviceSupport)
+        } message: {
+            Text("DevCodePurge will check for recently used devices for the Xcode app at Applications/Xcode.app\n\nIn the future, you will be able to select the location of the Xcode app that you would like to use.")
+        }
     }
 }
 

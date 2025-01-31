@@ -63,7 +63,7 @@ fileprivate struct PurgeButton: View {
     let action: () -> Void
     
     private var text: String {
-        return "Purge \("\(selectionCount)".configurePlural(count: selectionCount)) items"
+        return "Purge \("\(selectionCount)") items"
     }
     
     private var isDisabled: Bool {

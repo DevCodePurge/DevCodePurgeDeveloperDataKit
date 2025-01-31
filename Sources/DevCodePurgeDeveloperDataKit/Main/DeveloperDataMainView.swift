@@ -27,7 +27,7 @@ public struct DeveloperDataMainView: View {
     public var body: some View {
         ScanContentView(delegate: sharedENV) {
             ScanStartCategoryListView(
-                options: DeveloperDataCategory.allCases,
+                options: DeveloperDataCategory.allCases.sorted(by: { $0.name < $1.name }),
                 selections: sharedENV.categoriesToScan,
                 toggleScanCategory: sharedENV.toggleScanCategory(_:),
                 startScan: sharedENV.startScan

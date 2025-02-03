@@ -80,7 +80,7 @@ For detailed information, usage examples, and customization options, refer to th
 
 ## Contributing
 
-Feedback and contributions are welcome! If you have suggestions or encounter issues, please open an [issue](https://github.com/DevCodePurge/DevCodePurgeDeveloperDataKit/issues) or submit a pull request.
+Feedback and contributions are welcome! If you have suggestions or encounter issues, please open an [issue](https://github.com/DevCodePurge/DevCodePurgeDeveloperDataKit/issues/new?template=Blank+issue) or submit a pull request.
 
 ## License
 
